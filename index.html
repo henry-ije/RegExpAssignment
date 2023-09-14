@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RegExp Assignment</title>
+</head>
+<body>
+  <h2>Regular Expresion Assignment</h2>
+  <script>
+    //1. Cat and car
+  const word = /ca[rt]/;
+console.log(word.test("car")); 
+console.log(word.test("cat")); 
+
+
+   //2. pop and prop
+   const word1 = /p[op]/;
+console.log(regex.test("pop")); 
+console.log(regex.test("prop"));
+
+
+   //3. ferret, ferry, and ferrari
+   const word2= /ferr[ey]|ferret/;
+console.log(word2.test("ferret"));
+console.log(word2.test("ferry")); 
+console.log(word2.test("ferrari"));
+
+
+
+   //4.Any word ending in ious
+   const word3= /\w+ious\b/;
+console.log(word3.test("superstitious"));
+console.log(word3.test("unpretentious")); 
+console.log(word3.test("pretentious")); 
+
+//5. A whitespace character followed by a period, comma, colon, or semicolon
+const word4 = /\s(?=[:;,.])/;
+console.log(word4.test(" ."));
+console.log(word4.test("\t,"));
+console.log(word4.test("text:"));
+
+//6.A word longer than six letters
+const word5 = /\w{7,}/;
+console.log(word5.test("tiidelab"));
+console.log(word5.test("ccat"));
+
+//7. A word without the letter e (or E)
+const word6 = /[^eE\s]+/;
+console.log(word6.test("aerosoft"));
+console.log(word6.test("Energy"));
+console.log(word6.test("somalia"));
+
+/*Imagine you have written a story and used single quotation marks throughout
+to mark pieces of dialogue. Now you want to replace all the dialogue quotes
+with double quotes, while keeping the single quotes used in contractions like
+aren’t.
+Think of a pattern that distinguishes these two kinds of quote usage and
+craft a call to the replace method that does the proper replacement*/
+
+const phrase = /'My name is Henry, I am from Nigeria. I love the book title 'Highlands of dreams''/
+phrase = phrase.replace(/'([^']+)'/g, '"$1"')
+
+
+/*9.Write an expression that matches only JavaScript-style numbers. It must support an optional minus or plus sign in front of the number, the decimal dot,
+and exponent notation—5e-3 or 1E10—again with an optional sign in front of
+the exponent. Also note that it is not necessary for there to be digits in front
+of or after the dot, but the number cannot be a dot alone. That is, .5 and 5.
+are valid JavaScript numbers, but a lone dot isn’t.*/
+
+const word7 = /^[+-]?(?:\d+\.\d*|\.\d+|\d+)(?:[eE][+-]?\d+)?$/;
+
+console.log(word7.test("10")); 
+console.log(word7.test("e10")); 
+console.log(word7.test("2e-4"));
+console.log(word7.test("7."));
+console.log(word7.test("-3.14")); 
+console.log(regex7.test("3E5"));
+  </script>
+</body>
+</html>
